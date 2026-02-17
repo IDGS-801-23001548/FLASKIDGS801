@@ -8,6 +8,6 @@ class Config(object):
     
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLACHADEMY_DATABASE_URI = 'mysql+mysqldb://root:root@localhost/bdidgs801'
-    SQLACHADEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@localhost/bdidgs801'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     
