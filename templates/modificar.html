@@ -1,33 +1,31 @@
 {% extends "layout.html" %}
 
+{% import "_macros.html" as macros %}
+
 {% block container1 %}
 
 <section class="bg-neutral-primary">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-12">
-        <form method="POST" action="{{ url_for('alumnos') }}" class="max-w-md mx-auto">
+        <form method="POST" action="{{ url_for('modificar') }}" class="max-w-md mx-auto">
 
-            <h2 class="text-3xl font-bold tracking-tight text-heading md:text-4xl">Registrar un Alumno</h2>
+            <h2 class="text-3xl font-bold tracking-tight text-heading md:text-4xl">Actualizar un Alumno</h2>
 
             <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
 
-            <!-- id --> 
+            <!-- id -->
             <div class="relative z-0 w-full mb-5 group">
-                <input type="id" name="id" id="id"
+                <input type="hidden" id="id" name="id" value="{{form.id.data}}"
                     class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" " hidden />
-                <label for="id" hidden
-                    class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                    id
-                </label>
+                    placeholder=" " />
             </div>
 
             <div class="grid md:grid-cols-2 md:gap-6">
 
                 <!-- Nombre -->
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="nombre" id="nombre"
+                    <input type="nombre" id="nombre" name="nombre"
                         class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                        placeholder=" " required />
+                        placeholder=" " required value="{{form.nombre.data}}" />
                     <label for="nombre"
                         class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                         Nombre
@@ -36,9 +34,9 @@
 
                 <!-- Apellido Paterno -->
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="apaterno" id="apaterno"
+                    <input type="apaterno" id="apaterno" name="apaterno"
                         class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                        placeholder=" " required />
+                        placeholder=" " required value="{{form.apaterno.data}}" />
                     <label for="apaterno"
                         class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                         Apellido Paterno
@@ -49,19 +47,18 @@
 
             <!-- email -->
             <div class="relative z-0 w-full mb-5 group">
-                <input type="email" name="email" id="email"
+                <input type="email" id="email" name="email"
                     class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" " required />
+                    placeholder=" " required value="{{form.email.data}}" />
                 <label for="email"
                     class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                     Email
                 </label>
             </div>
 
-            <button type="submit" id="btn1"
-                class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                Guardar Alumno
-            </button>
+            <button type="submit"
+                class="text-white bg-success box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+                Actualizar Alumno</button>
 
             <a href="index"
                 class="text-white bg-warning box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
@@ -70,8 +67,5 @@
         </form>
     </div>
 </section>
-
-
-
 
 {% endblock container1 %}

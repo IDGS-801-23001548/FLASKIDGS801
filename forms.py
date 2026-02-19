@@ -23,6 +23,6 @@ class UserForm(FlaskForm):
         validators.DataRequired(message="El campo es requerido")
     ])
 
-    correo = EmailField("correo", [
+    email = EmailField("correo", [
         validators.Email(message="Ingresa un correo valido")
     ])
