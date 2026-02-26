@@ -8,7 +8,7 @@
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-12">
         <form method="POST" action="{{ url_for('eliminar') }}" class="max-w-md mx-auto">
 
-            <h2 class="text-3xl font-bold tracking-tight text-heading md:text-4xl">Eliminar un Alumno</h2>
+            <h2 class="text-3xl font-bold tracking-tight text-heading md:text-4xl">Actualizar un Alumno</h2>
 
             <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
 
@@ -32,14 +32,14 @@
                     </label>
                 </div>
 
-                <!-- Apellido Paterno -->
+                <!-- Apellidos -->
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="apaterno" id="apaterno" name="apaterno"
+                    <input type="apellidos" id="apellidos" name="apellidos"
                         class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                        placeholder=" " required value="{{form.apaterno.data}}" />
-                    <label for="apaterno"
+                        placeholder=" " required value="{{form.apellidos.data}}" />
+                    <label for="apellidos"
                         class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                        Apellido Paterno
+                        Apellidos
                     </label>
                 </div>
 
@@ -56,6 +56,17 @@
                 </label>
             </div>
 
+            <!-- Telefono -->
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="telefono" id="telefono" name="telefono"
+                    class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" " required value="{{form.telefono.data}}" />
+                <label for="telefono"
+                    class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                    Telefono
+                </label>
+            </div>
+            
             <button type="submit"
                 class="text-white bg-danger box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
                 Eliminar Alumno</button>
